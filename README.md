@@ -68,7 +68,7 @@ streamlit run app.py
 
 - **Data Source:** `Min_Marn_Ko_CV.pdf`
 - **Text Extraction:** `PyMuPDFLoader`
-- **Chunking:** `chunk_size=100`, `chunk_overlap=20`
+- **Chunking:** `chunk_size=50`, `chunk_overlap=10`
 - **Embedding Model:** `all-MiniLM-L6-v2`
 - **Vector Storage:** `FAISS`
 

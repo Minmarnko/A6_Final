@@ -28,7 +28,7 @@ def load_vector_store(vector_path, db_file_name, embedding_model):
 # Define Chatbot Prompt Template
 def get_prompt_template():
     template = """
-    Please answer the following question accurately based on the provided context of a person named Soe Htet Naing.
+    Please answer the following question accurately based on the provided context of a person named Min Marn Ko.
     
     Context:
     {context}

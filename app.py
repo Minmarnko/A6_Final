@@ -6,7 +6,7 @@ from langchain import PromptTemplate
 from langchain_community.embeddings import HuggingFaceInstructEmbeddings
 
 # Set API Key for Groq
-os.environ["GROQ_API_KEY"] = "****"
+os.environ["GROQ_API_KEY"] = "***************"
 
 # Initialize Language Model
 def load_groq_model():

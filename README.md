@@ -1,64 +1,93 @@
+# About Me
+
+- **Name:** Min Marn Ko
+- **ID:** st125437
+
 # A6: Let's Talk with Yourself
 
-## Project Details
-
-- **Name:** Min Marn Ko 
-- **ID:** st125437
+## Project Overview
 
 This project implements **Retrieval-Augmented Generation (RAG)** using the **LangChain framework**. The chatbot is designed to answer personal questions based on **documents and resumes**.
 
-The implementation is divided into three key tasks:
+## Table of Contents
 
-1. **Source Discovery (Documents)**
-2. **Analysis and Problem Solving**
-3. **Chatbot Development (Web Application)**
+1. [Project Structure](#project-structure)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Implementation Details](#implementation-details)
+5. [Example Questions](#example-questions)
+6. [Result Screenshot](#result-screenshot)
+7. [Contributing](#contributing)
+8. [License](#license)
 
----
+## Project Structure
 
-## Task 1: Source Discovery
+```
+📂 project_directory
+│── vector-store/        # FAISS vector store directory
+│── app.py               # Streamlit web application
+│── embeddings.faiss     # Stored FAISS index
+│── Min_Marn_Ko_CV.pdf   # Document used for retrieval
+│── requirements.txt     # List of dependencies
+│── README.md            # Project documentation
+│── A6_st125437.ipynb    # Jupyter Notebook for model development
+│── png.png              # Screenshot of chatbot result
+```
 
-### Data Sources
-- **Documents:**
-  - Min_Marn_Ko_CV.pdf
+## Installation
 
-### Key Steps:
-- **Load and Process Documents:** Using PyMuPDFLoader to extract text.
-- **Text Chunking:** Splitting content into manageable sizes (`chunk_size=100`, `chunk_overlap=20`).
-- **Embedding Generation:** Using all-MiniLM-L6-v2 with FAISS for efficient search.
-- **Retriever Setup:** FAISS is used to store and retrieve document embeddings efficiently.
+### **Step 1: Clone the Repository**
 
----
+```bash
+git clone https://github.com/your-repo-name.git
+cd project_directory
+```
 
-## Task 2: Analysis and Problem Solving
+### **Step 2: Install Dependencies**
 
-### Models Used:
+```bash
+pip install -r requirements.txt
+```
 
-| Component    | Model |
-|-------------|---------------------------------|
-| **Retriever** | FAISS (`all-MiniLM-L6-v2`) |
-| **Generator** | Groq LLaMA-3.1-8B (`https://python.langchain.com/docs/integrations/chat/groq/`) |
+## Usage
 
-### Identified Issues & Solutions:
-1. **Data Irregularities:** Ensured proper preprocessing and text cleaning.
-2. **Model Hallucinations:** Improved prompt engineering for accurate answers.
-3. **Performance Optimization:** Stored FAISS embeddings locally for faster retrieval.
+### **Step 1: Run the Application**
 
----
+```bash
+streamlit run app.py
+```
 
-## Task 3: Chatbot Development (Web Application)
+### **Step 2: Interact with the Chatbot**
 
-A **Streamlit-based web application** was built to enable interaction with the chatbot.
+- Ask questions about Min Marn Ko based on document knowledge.
+- View document-based responses and citations.
 
-### Features:
-- **Chat Interface:** Users can enter messages in a web-based chatbox.
-- **Intelligent Responses:** The model generates personalized responses using `qa_chain`.
-- **Source Display:** The chatbot provides links to relevant source documents.
+## Implementation Details
 
-### Screenshots:
-- **Chatbot Interface**  
-  ![Chatbot](images/png.ng)
+### **1. Source Discovery (Documents)**
 
-## Example Questions for this Chatbot
+- **Data Source:** `Min_Marn_Ko_CV.pdf`
+- **Text Extraction:** `PyMuPDFLoader`
+- **Chunking:** `chunk_size=100`, `chunk_overlap=20`
+- **Embedding Model:** `all-MiniLM-L6-v2`
+- **Vector Storage:** `FAISS`
+
+### **2. Analysis and Problem Solving**
+
+| Issue                    | Solution                                        |
+| ------------------------ | ----------------------------------------------- |
+| Data Irregularities      | Preprocessed text and removed formatting errors |
+| Model Hallucinations     | Optimized prompts and retrieval accuracy        |
+| Performance Optimization | Cached FAISS embeddings for faster retrieval    |
+
+### **3. Chatbot Development (Web Application)**
+
+- **Framework:** Streamlit
+- **Features:** Interactive chatbot, intelligent responses, document citations
+- **LLM Model:** Groq LLaMA-3.1-8B
+
+## Example Questions
+
 1. How old are you?
 2. What is your highest level of education?
 3. What major or field of study did you pursue during your education?
@@ -69,14 +98,16 @@ A **Streamlit-based web application** was built to enable interaction with the c
 8. How do you think cultural values should influence technological advancements?
 9. As a master’s student, what is the most challenging aspect of your studies so far?
 10. What specific research interests or academic goals do you hope to achieve during your time as a master’s student?
----
 
-## How to Run the Project
+## Result Screenshot
 
-### **Step 1: Install Dependencies**
-```bash
-pip install streamlit langchain langchain-community torch sentence-transformers faiss-cpu# A
+![Chatbot Result]\(png.png)
 
-### **Step 2: Run App**
+## Contributing
 
-streamlit run app.py
+If you'd like to contribute, please fork the repository and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+

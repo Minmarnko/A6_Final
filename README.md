@@ -56,7 +56,7 @@ A **Streamlit-based web application** was built to enable interaction with the c
 
 ### Screenshots:
 - **Chatbot Interface**  
-  ![Chatbot](images/png)
+  ![Chatbot](images/png.ng)
 
 ## Example Questions for this Chatbot
 1. How old are you?
@@ -75,4 +75,8 @@ A **Streamlit-based web application** was built to enable interaction with the c
 
 ### **Step 1: Install Dependencies**
 ```bash
-pip install streamlit langchain langchain-community torch sentence-transformers faiss-cpu# A6
+pip install streamlit langchain langchain-community torch sentence-transformers faiss-cpu# A
+
+### **Step 2: Run App**
+
+streamlit run app.py

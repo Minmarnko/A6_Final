@@ -101,7 +101,7 @@ streamlit run app.py
 
 ## Result Screenshot
 
-![Chatbot Result](png.png)
+![Chatbot Result](png2.png)
 
 
 ## Contributing
